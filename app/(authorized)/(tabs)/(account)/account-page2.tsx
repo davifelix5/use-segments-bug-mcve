@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import { Separator } from "@/components/Separator";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { router } from "expo-router";
@@ -20,8 +21,14 @@ export default function Account2() {
 
   return (
     <ThemedView>
-      <ThemedText>Account 2</ThemedText>
+      <ThemedText>To see the bug happening, logout using the first button, segment log appears twice</ThemedText>
+      <Separator />
+      <ThemedText>To see the right behavior, logout using the second button, segment log appears once</ThemedText>
+      <Separator />
+      <ThemedText>PS: clear the console before logging out to better see the error</ThemedText>
+      <Separator />
       <Button text="Log out" onPress={handleLogout} />
+      <Separator />
       <Button text="Log out (to login-page2)" onPress={handleLogoutToLogin2} />
      </ThemedView>
   )
