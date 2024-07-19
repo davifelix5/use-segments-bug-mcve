@@ -1,7 +1,7 @@
-import { TouchableOpacity, TouchableOpacityProps } from "react-native-gesture-handler"
 import { ThemedView } from "./ThemedView"
 import { ThemedText } from "./ThemedText"
 import React from "react"
+import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 
 interface ButtonProps extends TouchableOpacityProps {
   text: string;

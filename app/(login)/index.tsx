@@ -8,8 +8,6 @@ export default function LoginPage() {
     <ThemedView>
       <Link href={'/(tabs)/(home)'} asChild ><Button text="Sign in" /></Link>
       <Separator />
-      <Link href={'/register'} asChild><Button text="Register" /></Link>
-      <Separator />
       <Link href={'/login-page2'} asChild><Button text="Login 2" /></Link>
     </ThemedView>
   )

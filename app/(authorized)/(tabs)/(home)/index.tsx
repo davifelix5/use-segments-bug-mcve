@@ -10,9 +10,9 @@ export default function HomePage() {
     <ThemedView>
        <ThemedText>To reproduce the bug, go to the Account tab</ThemedText>
        <Separator />
-       <ThemedText>To see the modal working, go to Home 2 with the link bellow</ThemedText>
+       <ThemedText>To see the modal working, click the link bellow</ThemedText>
        <Separator />
-       <Link href={'home-page2'} asChild><Button text="Home 2" /></Link>
+       <Link href={'/(modals)/modal1'} asChild><Button text="Modal 1" /></Link>
     </ThemedView>
   );
 }
