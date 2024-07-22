@@ -10,7 +10,6 @@ export function ThemedText(props: ThemedTextProps) {
   return (
     <Text
       style={[
-        { color: '#11181C' },
         styles.default,
         props.style,
       ]}
@@ -21,6 +20,7 @@ export function ThemedText(props: ThemedTextProps) {
 
 const styles = StyleSheet.create({
   default: {
+    color: '#11181C',
     fontSize: 16,
     lineHeight: 24,
   },

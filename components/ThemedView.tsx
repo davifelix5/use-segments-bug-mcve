@@ -1,4 +1,4 @@
-import { View, type ViewProps } from 'react-native';
+import { StyleSheet, View, type ViewProps } from 'react-native';
 
 export type ThemedViewProps = ViewProps & {
   lightColor?: string;
@@ -8,16 +8,22 @@ export type ThemedViewProps = ViewProps & {
 
 export function ThemedView({ style, lightColor, darkColor, ...otherProps }: ThemedViewProps) {
 
+  const paddingHorizontal = otherProps.noPadding ? 0 : 16;
+
   return (
     <View 
       style={[
-        { 
-          backgroundColor: '#fff', 
-          paddingHorizontal: otherProps.noPadding ? 0 : 16 
-        }, 
-        style
+        { paddingHorizontal }, 
+        styles.default,
+        style,
       ]} 
       {...otherProps}   
     />
   )
 }
+
+const styles = StyleSheet.create({
+  default: {
+    backgroundColor: '#fff', 
+  },
+})
