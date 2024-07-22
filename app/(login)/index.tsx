@@ -10,7 +10,7 @@ export default function LoginPage() {
       <Separator />
       <ThemedText>To reproduce, sign in.</ThemedText>
       <Separator />
-      <Link href={'/(tabs)/(home)'} asChild ><Button text="Sign in" /></Link>
+      <Link href={'/(authorized)/(home)'} asChild ><Button text="Sign in" /></Link>
       <Separator />
       <Link href={'/login-page2'} asChild><Button text="Login 2" /></Link>
     </ThemedView>

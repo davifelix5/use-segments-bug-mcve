@@ -1,6 +1,4 @@
-# Welcome to your Expo app 👋
-
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# Bug report on the useSegments hook
 
 ## Get started
 
@@ -13,38 +11,41 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 2. Start the app
 
    ```bash
-    npx expo start
+    npm run ios
    ```
 
-In the output, you'll find options to open the app in a
+   or
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```bash
+    npm run android
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Projects routes setup
 
-## Get a fresh project
+- Start an app with expo router set up.
 
-When you're ready, run:
+- Create tow groups: one for authenticated users (`(authorized)`) and other for non-authenticated users (`(login)`).
 
-```bash
-npm run reset-project
-```
+- Set up a `Stack` navigator in the `(login)`.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- Set up a `Tab` navigator in the `(authorized)` group. 
 
-## Learn more
+- Set up a `Stack` navigator on each tab of the `Tab` navigator.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Describing the bug
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+**Bug behavior**: When navigating back to the `(login)` group's `index.tsx` page from inside one of the stacks in the tab navigator, the `useSegments` hook is triggered twice, whereas the `usePathname` hook is triggered only once.
 
-## Join the community
+**Expected behavior**: To my understanding of the [documentation](https://docs.expo.dev/router/reference/hooks/#usepathname), the hooks should have the same behavior, apart form the `usePathname` returning the normalized route instead of the array of un-normalized segments like the `useSegments` hook.
 
-Join our community of developers creating universal apps.
+**Use case**: I need the `useSegments` hook working [like the `usePathname`](https://docs.expo.dev/router/reference/screen-tracking/) so I can know whether a route has `url` params in order to build a custom screen name to the path for analytics tracking.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## How to reproduce
+
+- Run the app.
+- Press the `Sign in` link.
+- Navigate to the `Account tab`.
+- Press the `Log out` button and see the effect with `segments` dependency running two `console.log`'s for the same route.
+
+
+> Notice that, when pressing te `Log out (to login-page2)` button, the bug does not happen, neither when navigating to a stack inside the tab navigator. That seems to indicate the the problem is related to navigating to `index pages`.

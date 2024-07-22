@@ -12,7 +12,6 @@ export default function HomePage() {
        <Separator />
        <ThemedText>To see the modal working, click the link bellow</ThemedText>
        <Separator />
-       <Link href={'/(modals)/modal1'} asChild><Button text="Modal 1" /></Link>
     </ThemedView>
   );
 }
