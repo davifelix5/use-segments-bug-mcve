@@ -20,7 +20,7 @@
     npm run android
    ```
 
-## Projects routes setup
+## Step-by-step setup
 
 - Start an app with expo router set up.
 
@@ -48,4 +48,4 @@
 - Press the `Log out` button and see the effect with `segments` dependency running two `console.log`'s for the same route.
 
 
-> Notice that, when pressing te `Log out (to login-page2)` button, the bug does not happen, neither when navigating to a stack inside the tab navigator. That seems to indicate the the problem is related to navigating to `index pages`.
+> Notice that, when pressing the `Log out (to login-page2)` button, the bug does not happen, neither when navigating **to** an `index` of a stack inside the tab navigator -- which is the case when the `Sign in` button is pressed. That seems to indicate that the problem is related to navigating **back** to `index` pages from stacks nested into tab navigators.
