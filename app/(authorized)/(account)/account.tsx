@@ -2,12 +2,12 @@ import { Button } from "@/components/Button";
 import { Separator } from "@/components/Separator";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { router } from "expo-router";
+import { Href, router } from "expo-router";
 import { Alert } from "react-native";
 
 export default function Account() {
 
-  const showAlert = (text: string, route: string) => {
+  const showAlert = (text: string, route: Href) => {
     Alert.alert('Logout', text, [
       { text:'Cancel', style: 'destructive' }, 
       { text: 'Ok', onPress: () => router.navigate(route) }
@@ -15,11 +15,11 @@ export default function Account() {
   }
 
   const handleLogout = () => {
-    showAlert('Are you sure you want to log out and see the bug in the console?', '(login)')
+    showAlert('Are you sure you want to log out and see the bug in the console?', '/(login)')
   }
 
   const handleLogoutToLogin2 = () => {
-    showAlert('Are you sure you want to log out and NOT see the bug on the console?', '(login)/login-page2')
+    showAlert('Are you sure you want to log out and NOT see the bug on the console?', '/(login)/login-page2')
   }
 
   return (

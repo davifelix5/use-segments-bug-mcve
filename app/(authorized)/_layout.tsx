@@ -1,5 +1,5 @@
 import { TabBarIcon } from "@/components/TabBarIcon";
-import { Stack, Tabs } from "expo-router";
+import { Tabs } from "expo-router";
 
 export default function AuthorizedLayout() {
   return (

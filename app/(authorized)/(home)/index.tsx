@@ -1,8 +1,6 @@
-import { Button } from '@/components/Button';
 import { Separator } from '@/components/Separator';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { Link } from 'expo-router';
 
 
 export default function HomePage() {

@@ -1,4 +1,3 @@
-import { DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Slot, usePathname, useSegments } from 'expo-router';
 import 'react-native-reanimated';
 
