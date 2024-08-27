@@ -17,8 +17,8 @@
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/native": "^6.0.2",
-    "expo": "~51.0.26",
-    "expo-router": "~3.5.21",
+    "expo": "~51.0.31",
+    "expo-router": "~3.5.23",
     "react": "18.2.0",
     "react-native": "0.74.5"
   },
